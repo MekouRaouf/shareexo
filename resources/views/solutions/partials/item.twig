@@ -1,0 +1,16 @@
+<div>
+	<div class="box">
+		<div class="image fit">
+	    	<img src="images/pic02.jpg" alt="" />
+		</div>
+		<div class="content">
+			<header class="align-center">
+				<p>{{ solution.username }}</p>
+			</header>
+			<p>{{ solution.description }}</p>
+				<footer class="align-center">
+					<a href="{{ path_for('solution.get', {slug: solution.slug}) }}" class="button alt">See More</a>
+				</footer>
+		</div>
+	</div>
+</div>

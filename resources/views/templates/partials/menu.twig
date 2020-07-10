@@ -1,0 +1,16 @@
+	<div class="logo"><a href="{{ path_for('home') }}">Shareexo</a></div>
+	<a href="{{ path_for('#menu') }}">Menu</a>
+</header>
+
+<nav id="menu">
+	<ul class="links">
+		<li><a href="{{ path_for('home') }}">Home</a></li>
+		<li><a href="{{ path_for('question.new') }}">New question</a></li>
+
+		{% if history is not empty %}
+			<li><a href="{{ path_for('history.index') }}">History</a></li>
+		{% endif %}
+
+		<li><a href="{{ path_for('about') }}">About</a></li>
+	</ul>
+</nav>

@@ -1,0 +1,67 @@
+{% extends 'templates/layout.twig' %}
+
+{% block content %}
+
+<body class="subpage">
+
+	{% include 'templates/partials/menu_header_without_alt.twig' %}
+    {% include 'templates/partials/menu.twig' %}
+
+    <section id="two" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+                    <header class="align-center">
+                        <p>{{ question.username }}</p>
+						<h2>{{ question.subject }}</h2>
+                        </header>
+                    <p>{{ question.description }}</p>
+
+                    {% if images is not empty %}
+
+                        <h3>Images</h3>
+
+                        {% for index, image in images %}
+
+                        <span class="image fit">
+                        <img src="/uploads/images/{{ image.name }}" alt="{{ image.name }}" />
+                        </span>
+                        <div class="box alt"></div>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                    <h4>Question link</h4>
+                    <pre>
+                        <code>{{ question.link }}</code>
+                    </pre>
+					<a href="{{ path_for('solution.new', {slug: question.slug}) }}" class="button special">New solution</a>
+		    	</div>
+	    	</div>
+    	</div>
+
+	<div class="inner">
+        {% if question.solutions is empty %}
+        
+            <header class="align-center">
+                <h2>No solution</h2>
+            </header>
+
+        {% else %}
+
+            <header class="align-center">
+                <h2>Solutions</h2>
+            </header>
+
+                {% for index, solution in solutions %}
+
+                    {% include 'solutions/partials/item.twig' %}
+
+                {% endfor %}
+
+        {% endif %}
+    </div>
+	</section>
+
+{% endblock %}

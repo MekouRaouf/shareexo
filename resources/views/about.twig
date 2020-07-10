@@ -1,0 +1,68 @@
+{% extends 'templates/layout.twig' %}
+
+{% block content %}
+
+<body>
+
+    {% include 'templates/partials/menu_header_with_alt.twig' %}
+    {% include 'templates/partials/menu.twig' %}
+    {% include 'templates/partials/banner.twig' %}
+
+    <section id="one" class="wrapper style2">
+		<div class="inner">
+            <header align="center">
+				<h2>About Shareexo</h2>
+			</header>
+            <blockquote>
+                Shareexo is a web application that will help you upload exercises and get solutions in less than 5 minutes.
+                It has the following functionalities.
+                <br><br>
+                <dl>
+					<dt>1. Adding a question</dt>
+						<dd>
+							<p>
+                            This functionality permits you to add a question.
+                            You will insert your name,
+                            the subject in which your question is found so the person answering can have an idea of what is found in there.
+                            There's a description textarea input where you will briefly explain your question.
+                            You can associate pictures to the question using the image-upload field (it can be a snap, handwritten etc). This will be optional.
+                            You can decide to email a copy of the question you're uploading to your email (optional). 
+                            </p>
+						</dd>
+					<dt>2. Adding a solution</dt>
+						<dd>
+							<p>
+                            Inside any uploaded question there's a new solution button where you'll click to answer a question.
+                            You will add your name, email, description and associated pictures.
+                            You will also decide if you want to email a copy to your email.
+                            </p>
+						</dd>
+					<dt>3. History</dt>
+				        <dd>
+							<p>
+                            In case you don't find a question or solution you are just from uploading beacause of alot of uploads
+                            from other users, inside the menu there's a history button that will appear.
+                            Click there and you have all the history of what you recently uploading.
+                            This history button will be active untill you close your web browser and stay out for long.
+                            So to run from that I advice you to always email your questions and solutions.
+                            </p>
+						</dd>
+                    <dt>3. Link</dt>
+				        <dd>
+							<p>
+                            For any uploaded question/solution there is a link that you can copy and send to friends for
+                            them to help you.
+                            </p>
+						</dd>
+                    <dt>3. Contact Us</dt>
+				        <dd>
+							<p>
+                            We are also found on instagram, facebook and email.
+                            </p>
+						</dd>
+				</dl>
+            </blockquote>
+		</div>
+	</section>
+
+{% endblock %}

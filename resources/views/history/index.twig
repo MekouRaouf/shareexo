@@ -1,0 +1,16 @@
+{% extends 'templates/layout.twig' %}
+
+{% block content %}
+
+    <body class="subpage">
+
+	{% include 'templates/partials/menu_header_without_alt.twig' %}
+    {% include 'templates/partials/menu.twig' %}
+
+    {% for index, summary in summaries %}
+
+        {% include 'history/partials/item.twig' %}
+
+    {% endfor %}
+
+{% endblock %}

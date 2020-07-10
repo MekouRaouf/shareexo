@@ -1,0 +1,13 @@
+{% if flash.getMessage('solution') %}
+    <div class="alert alert-primary" align="center">
+        {{ flash.getMessage('solution') | first }}
+        <span class="close">X</span>
+    </div>
+{% endif %}
+
+{% if flash.getMessage('question') %}
+    <div class="alert alert-primary" align="center">
+        {{ flash.getMessage('question') | first }}
+        <span class="close">X</span>
+    </div>	
+{% endif %}	

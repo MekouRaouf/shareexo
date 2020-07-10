@@ -1,0 +1,74 @@
+{% extends 'templates/layout.twig' %}
+
+{% block content %}
+
+<body class="subpage">
+
+	{% include 'templates/partials/menu_header_without_alt.twig' %}
+    {% include 'templates/partials/menu.twig' %}
+    
+    <section id="One" class="wrapper style3">
+		<div class="inner">
+			<header class="align-center">
+				<h2>New question</h2>
+				<p>Add a question and instantly get solutions</p>
+			</header>
+		</div>
+	</section>
+
+    <section id="two" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+					<form method="post" action="{{ path_for('question.create') }}" enctype="multipart/form-data" autocomplete="off">
+						<div class="row uniform">
+							<div class="6u 12u$(xlarge)">
+								<input type="text" name="name" id="name" value="{{ old.name }}" placeholder="Your name" />
+                                {% if errors.name %}
+                                    <span class="errors">{{ errors.name | first }}</span>
+                                {% endif %}
+							</div>
+							<div class="6u$ 12u$(xlarge)">
+								<input type="email" name="email" id="email" value="{{ old.email }}" placeholder="Email" />
+								{% if errors.email %}
+                                    <span class="errors">{{ errors.email | first }}</span>
+                                {% endif %}
+							</div>
+							<div class="6u$ 12u$(xlarge)">
+								<input type="text" name="subject" id="subject" value="{{ old.subject }}" placeholder="Subject" />
+								{% if errors.subject %}
+                                    <span class="errors">{{ errors.subject | first }}</span>
+                                {% endif %}
+							</div>
+
+							<div class="12u$">
+								<textarea name="description" id="description" placeholder="Enter some description on your question" rows="6">{{ old.description }}</textarea>
+								{% if errors.description %}
+                                    <span class="errors">{{ errors.description | first }}</span>
+                                {% endif %}
+							</div>
+
+                            <div class="12u$ (xlarge)">
+                                <input type="file" multiple="multiple" name="image[]" class="button alt small" />
+							</div>
+						
+							<div class="6u 12u$(small)">
+								<input type="checkbox" id="copy" name="copy">
+								<label for="copy">Email me a copy of this question</label>
+							</div>
+
+							<div class="12u$(xlarge)">
+								<ul class="actions">
+									<li><input type="submit" value="Send question" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</section>
+   
+
+{% endblock %}

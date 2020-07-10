@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS "images" (
+	id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	image	TEXT NOT NULL,
+	question_id	INTEGER,
+	solution_id	INTEGER,
+	created_at	TIMESTAMP NOT NULL,
+	updated_at	TIMESTAMP NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "solutions" (
+	id	INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	username	VARCHAR(50) NOT NULL,
+	useremail	VARCHAR(50) NOT NULL,
+	description	TEXT,
+	slug TEXT NOT NULL,
+	link TEXT NOT NULL,
+	question_id	INTEGER NOT NULL,
+	created_at	TIMESTAMP NOT NULL,
+	updated_at	TIMESTAMP NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "questions" (
+	id	INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	username VARCHAR(50) NOT NULL,
+	useremail VARCHAR(50),
+	subject VARCHAR(50) NOT NULL,
+	description TEXT,
+	slug TEXT NOT NULL,
+	link TEXT NOT NULL,
+	created_at TIMESTAMP,
+	updated_at TIMESTAMP
+);

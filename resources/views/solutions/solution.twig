@@ -1,0 +1,43 @@
+{% extends 'templates/layout.twig' %}
+
+{% block content %}
+
+<body class="subpage">
+
+	{% include 'templates/partials/menu_header_without_alt.twig' %}
+    {% include 'templates/partials/menu.twig' %}
+
+    <section id="two" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+                    <header class="align-center">
+                        <p>{{ solution.username }}</p>
+                        </header>
+                    <p>{{ solution.description }}</p>
+
+                    {% if images is not empty %}
+
+                        <h3>Images</h3>
+
+                        {% for index, image in images %}
+
+                        <span class="image fit">
+                        <img src="/uploads/images/{{ image.name }}" alt="{{ image.name }}" />
+                        </span>
+                        <div class="box alt"></div>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                    <h4>Solution link</h4>
+                    <pre>
+                        <code>{{ solution.link }}</code>
+                    </pre>
+		    	</div>
+	    	</div>
+    	</div>
+	</section>
+
+{% endblock %}
